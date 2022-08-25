@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* 
+section{
+    padding: 100px;
+} */
+
+.img{
+    opacity: 0;
+
+    position: absolute;
+}
+
+.preloader{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #070707;
+    z-index: 100;
+}
+
+.preloader.active{
+    transform: translateY(-100vh);
+    transition: ease-in-out 2s;
+    transition-delay: 1s;
+}
+
+.preloader.active .img {
+    opacity: 1;
+    z-index: 99999;
+}
+
+.preloader:before{
+    content: "Loading";
+    position: absolute;
+    font-size: 12em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .03);
+}
+
+
+.counter{
+    position: relative;
+    color: #fff;
+    font-size: 16em;
+    z-index: 1;
+}
+.counter:after{
+    content: '%';
+    font-size: 0.5em;
+}
+
+
+.hide{
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
